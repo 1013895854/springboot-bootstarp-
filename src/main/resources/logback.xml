@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<configuration debug="true">
+
+	<property name="Log_Home" value="D:/logs" />
+		
+	<!-- Console -->
+	<appender name="console" class="ch.qos.logback.core.ConsoleAppender">
+		<encoder>
+			<pattern>
+				%date{HH:mm:ss.SSS} [%thread] %-5level %logger{36} - %msg%n
+			</pattern>
+		</encoder>
+	</appender>
+	
+	<!-- INFO -->
+	<appender name="InfoRollingFile" class="ch.qos.logback.core.rolling.RollingFileAppender">
+		<file>${Log_Home}/logback.log</file>
+		<encoder>
+			<pattern>%d{yyyy-MM-dd HH:mm:ss.SSS} [%thread] %-5level %logger{50} - %msg%n</pattern>
+		</encoder>
+		<rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+			<FileNamePattern>${Log_Home}/logback.%d{yyyy-MM-dd}.%i.log</FileNamePattern>
+			<MaxHistory>10</MaxHistory>
+			<timeBasedFileNamingAndTriggeringPolicy class="ch.qos.logback.core.rolling.SizeAndTimeBasedFNATP">
+				<maxFileSize>1MB</maxFileSize>
+			</timeBasedFileNamingAndTriggeringPolicy>
+		</rollingPolicy>
+	</appender>
+
+	<root level="INFO">
+		<appender-ref ref="console" />
+		<appender-ref ref="InfoRollingFile" />
+	</root>
+
+</configuration>

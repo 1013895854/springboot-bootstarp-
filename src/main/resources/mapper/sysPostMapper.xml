@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" 
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.example.demo.dao.PostMapper">
+	
+	<resultMap type="com.example.demo.entity.SysPostEntity" id="Result">
+		<result property="postId" column="post_id" />
+		<result property="postCode" column="post_code" />
+		<result property="postName" column="post_name" />
+		<result property="createTime" column="create_time" />
+	</resultMap>
+	
+	
+	<select id="selectPostList" resultMap="Result" parameterType="com.example.demo.entity.SysPostEntity">
+		select 
+			post_id,
+			post_code,
+			post_name,
+			create_time
+		from
+			sys_test
+		<where>
+            <if test="postId != null and postId != '' "> and post_id = #{postId}</if>
+            <if test="postCode !=null and postCode!='' ">and post_code = #{postCode}</if>
+            <if test="postName !=null and postName!='' ">and post_name =#{postName}</if>
+        </where>
+	</select>
+	
+	<insert id="insertMoreEntity" parameterType="com.example.demo.entity.SysPostEntity">
+		insert into sys_test (
+			post_code,
+			post_name,
+			create_time
+			)
+		values
+		(
+			#{postCode},
+			#{postName},
+			CURRENT_TIMESTAMP
+		)
+		<!-- <foreach collection="list" item="item" index="index" separator =",">
+			
+		</foreach> -->
+	</insert>
+	
+	<!-- 常用方法 -->
+	<!--  <select id="selectPostList" resultType="com.example.demo.entity.SysPostEntity">
+		select 
+			post_id postId,
+			post_code postCode,
+			post_name postName,
+			create_time createTime
+		from
+			sys_post
+	</select> -->
+</mapper>

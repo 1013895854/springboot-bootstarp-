@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="zh-CN" xmlns:th="http://www.thymeleaf.org" >
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- 上述3个meta标签*必须*放在最前面，任何其他内容都*必须*跟随其后！ -->
+    <title>Bootstrap 101 Template</title>
+    <!-- Bootstrap -->
+   <!--  <link href="./bootstrap/css/bootstrap.min.css" rel="stylesheet"> -->
+    <script src="https://cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
+    <!--validate 验证  -->
+    <script src="http://static.runoob.com/assets/jquery-validation-1.14.0/dist/jquery.validate.min.js"></script>
+
+    <!-- bootstrap -->
+    <link href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.bootcss.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+    <!-- bootstrap-table -->
+    <link href="https://cdn.bootcss.com/bootstrap-table/1.11.1/bootstrap-table.min.css" rel="stylesheet">
+    <script src="https://cdn.bootcss.com/bootstrap-table/1.11.1/bootstrap-table.min.js"></script>
+    <script src="https://cdn.bootcss.com/bootstrap-table/1.11.1/locale/bootstrap-table-zh-CN.min.js"></script>
+  </head>
+  <body>
+    <h1>你好，世界！</h1>
+    
+    <form action="" id="test">
+    	姓名：<input type="text" name="name" ><hr>
+    	年龄：<input type="text" name="age" ><hr>
+    	<input type="submit" value="anniu">
+    </form>
+  
+        
+	
+	
+	<script>
+	
+	
+	
+	
+		$("#test").validate({
+			onsubmit:true, 
+			rules:{
+				name:"required",
+				age:"required"
+			},
+			message:{
+				name:"请输出code",
+				age:"请输入name"
+			}
+		})
+		
+	
+	</script>
+	
+    <!-- jQuery (Bootstrap 的所有 JavaScript 插件都依赖 jQuery，所以必须放在前边) -->
+   <!--  <script src="./bootstrap/common/jquery-1.11.0.min.js"></script> -->
+    <!-- 加载 Bootstrap 的所有 JavaScript 插件。你也可以根据需要只加载单个插件。 -->
+   <!--  <script src="./bootstrap/js/bootstrap.min.js"></script> -->
+  </body>
+</html>
