@@ -1,4 +1,4 @@
-package com.example.demo.controller;
+ package com.example.demo.controller;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -111,7 +111,7 @@ public class SysPostController {
 		spEntity1.setPostName("test1");
 		SysPostEntity spEntity = new SysPostEntity();
 		spEntity.setPostCode("test");
-		spEntity.setPostName("test44444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444");
+		spEntity.setPostName("test4444444444444444444444444444444444444444444");
 		List<SysPostEntity> list = new ArrayList<SysPostEntity>();
 		list.add( spEntity1);
 		list.add( spEntity);
